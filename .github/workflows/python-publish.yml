@@ -22,6 +22,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: "16"
+    
+    - name: install node dependencies
+      run: |
+        cd streamlit_card/frontend
+        npm install
+    
+    - name: build frontend
+      run: |
+        npm run build
+        cd ../..
+
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
