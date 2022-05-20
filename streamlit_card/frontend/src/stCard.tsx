@@ -55,7 +55,11 @@ class Card extends StreamlitComponentBase {
       color: theme.textColor,
       width: `${width}px`,
       position: 'relative',
-    })
+      transition: 'all 0.3s ease-in-out',
+    }, `
+      &:hover {
+        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
+      }`)
 
     const Parent = styled.div({
       height: height + margin * 2,
