@@ -41,3 +41,18 @@ hasClicked = card(
   url="https://github.com/gamcoh/st-card"
 )
 ```
+
+You can also create a card without an URL. That way you control the behavior when the user click on it.
+For instance:
+```py
+from streamlit_card import card
+
+hasClicked = card(
+  title="Hello World!",
+  text="Some description",
+  image="http://placekitten.com/200/300",
+)
+
+if hasClicked:
+    # do something
+```
