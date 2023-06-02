@@ -4,6 +4,8 @@ Streamlit Component, for a UI card
 
 authors - [@gamcoh](https://github.com/gamcoh) @Pernod Ricard
 
+![image](https://github.com/gamcoh/st-card/assets/18115514/c03e07e1-53a8-4829-85f4-3008571e5c1f)
+
 ## Installation
 
 Install `streamlit-card` with pip
