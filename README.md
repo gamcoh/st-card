@@ -23,3 +23,21 @@ hasClicked = card(
 )
 ```
    
+You can also use a local image by doing this instead
+```py
+import base64
+
+with open(filepath, "rb") as f:
+    data = f.read()
+    encoded = base64.b64encode(data)
+data = "data:image/png;base64," + encoded.decode("utf-8")
+
+from streamlit_card import card
+
+hasClicked = card(
+  title="Hello World!",
+  text="Some description",
+  image=data
+  url="https://github.com/gamcoh/st-card"
+)
+```
