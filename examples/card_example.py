@@ -8,7 +8,7 @@ res = card(
     title="Streamlit Card",
     text="This is a test card",
     image="https://placekitten.com/500/500",
-    url="https://github.com/gamcoh/st-card",
+    on_click=lambda: print("Clicked!")
 )
 
 st.write(res)

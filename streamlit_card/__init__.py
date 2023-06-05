@@ -1,5 +1,5 @@
 import os
-from typing import Optional
+from typing import Optional, Callable, Any
 
 import streamlit.components.v1 as components
 
@@ -22,6 +22,7 @@ def card(
     text: str,
     image: Optional[str] = None,
     url: Optional[str] = None,
+    on_click: Callable[[Any], Any] = None,
     key: Optional[str] = None,
 ) -> bool:
     """Creates a UI card like component.
@@ -31,8 +32,14 @@ def card(
         text (str): The text of the card.
         image (str, optional): An optional background image. Defaults to None.
         url (str, optional): An optional url to open when the card is clicked. Defaults to None.
+        on_click (Callable, optional): An optional function callback that
+                                   will fire when clicked.
+                                   Can only work if the url is None.
         key (str, optional): An optional key for the component. Defaults to None.
     """
-    return _streamlit_card(
+    clicked = _streamlit_card(
         title=title, text=text, image=image, url=url, key=key, default=False
     )
+    if clicked:
+        on_click()
+    return clicked

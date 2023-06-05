@@ -58,3 +58,15 @@ hasClicked = card(
 if hasClicked:
     # do something
 ```
+
+If you want, you could use a callback to handle the click like so:
+```py
+from streamlit_card import card
+
+hasClicked = card(
+  title="Hello World!",
+  text="Some description",
+  image="http://placekitten.com/200/300",
+  on_click=lambda: print("Clicked!")
+)
+```
