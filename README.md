@@ -10,7 +10,7 @@ authors - [@gamcoh](https://github.com/gamcoh) @Pernod Ricard
 
 Install `streamlit-card` with pip
 ```bash
-pip install streamlit-card 
+pip install streamlit-card
 ```
 
 usage, import the `card` function from `streamlit_card`
@@ -24,7 +24,7 @@ hasClicked = card(
   url="https://github.com/gamcoh/st-card"
 )
 ```
-   
+
 You can also use a local image by doing this instead
 ```py
 import base64
@@ -68,5 +68,31 @@ hasClicked = card(
   text="Some description",
   image="http://placekitten.com/200/300",
   on_click=lambda: print("Clicked!")
+)
+```
+
+## Customizations
+
+If you want, you could use a callback to handle the click like so:
+```py
+from streamlit_card import card
+
+res = card(
+    title="Streamlit Card",
+    text="This is a test card",
+    image="https://placekitten.com/500/500",
+    styles={
+        "card": {
+            "width": "500px",
+            "height": "500px",
+            "border-radius": "60px",
+            "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
+            ...
+        },
+        "text": {
+            "font-family": "serif",
+            ...
+        }
+    }
 )
 ```

@@ -1,12 +1,13 @@
+# -*- coding: utf-8 -*-
 import setuptools
 
-with open('README.md') as readme_file:
+with open("README.md") as readme_file:
     readme = readme_file.read()
 
 
 setuptools.setup(
     name="streamlit-card",
-    version="0.0.5",
+    version="0.0.6",
     author="gamcoh",
     author_email="cohengamliel8@gmail.com",
     description="A streamlit component, to make UI cards",

@@ -16,7 +16,7 @@ class Card extends StreamlitComponentBase {
   }
 
   public render = (): ReactNode => {
-    const { title, text, image } = this.props.args;
+    const { title, text, image, styles } = this.props.args;
 
     // Streamlit sends us a theme object via props that we can use to ensure
     // that our component has visuals that match the active theme in a
@@ -31,7 +31,7 @@ class Card extends StreamlitComponentBase {
 
     const height = 250;
     const width = 300;
-    const margin = 40;
+    const margin = styles.card.margin || 40;
 
     const Card = styled.div(
       {
@@ -45,7 +45,6 @@ class Card extends StreamlitComponentBase {
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundColor: "#eee",
         boxShadow: "0px 0px 40px rgba(0, 0, 0, 0.2)",
         margin: `${margin}px`,
         flexDirection: "column",
@@ -56,6 +55,7 @@ class Card extends StreamlitComponentBase {
         width: `${width}px`,
         position: "relative",
         transition: "all 0.3s ease-in-out",
+        ...styles.card,
       },
       `
       &:hover {
@@ -68,9 +68,7 @@ class Card extends StreamlitComponentBase {
     );
 
     const Parent = styled.div({
-      height: height + margin * 2,
-      width: width + margin * 2,
-      margin: "auto",
+      padding: margin
     });
 
     const Title = styled.h2({
@@ -78,6 +76,7 @@ class Card extends StreamlitComponentBase {
       zIndex: "2",
       fontSize: "2em",
       fontWeight: "bolder",
+      ...styles.text,
     });
 
     const Text = styled.p({
@@ -85,6 +84,7 @@ class Card extends StreamlitComponentBase {
       fontWeight: "bolder",
       zIndex: "2",
       fontSize: "1em",
+      ...styles.text,
     });
 
     const Filter = styled.div({

@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 import os
-from typing import Optional, Callable, Any
+from typing import Any, Callable, Dict, Optional
 
 import streamlit.components.v1 as components
 
@@ -10,7 +11,9 @@ if _RELEASE:  # use the build instead of development if release is true
     root_dir = os.path.dirname(os.path.abspath(__file__))
     build_dir = os.path.join(root_dir, "frontend/build")
 
-    _streamlit_card = components.declare_component(COMPONENT_NAME, path=build_dir)
+    _streamlit_card = components.declare_component(
+        COMPONENT_NAME, path=build_dir
+    )
 else:
     _streamlit_card = components.declare_component(
         COMPONENT_NAME, url="http://localhost:3000"
@@ -23,6 +26,7 @@ def card(
     image: Optional[str] = None,
     url: Optional[str] = None,
     on_click: Callable[[Any], Any] = None,
+    styles: Optional[Dict[str, Any]] = None,
     key: Optional[str] = None,
 ) -> bool:
     """Creates a UI card like component.
@@ -38,7 +42,13 @@ def card(
         key (str, optional): An optional key for the component. Defaults to None.
     """
     clicked = _streamlit_card(
-        title=title, text=text, image=image, url=url, key=key, default=False
+        title=title,
+        text=text,
+        image=image,
+        url=url,
+        key=key,
+        styles=styles,
+        default=False,
     )
     if clicked:
         on_click()
