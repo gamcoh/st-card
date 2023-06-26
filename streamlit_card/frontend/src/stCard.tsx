@@ -16,7 +16,7 @@ class Card extends StreamlitComponentBase {
   }
 
   public render = (): ReactNode => {
-    const { title, text, image, styles } = this.props.args;
+    let { title, text, image, styles } = this.props.args;
 
     // Streamlit sends us a theme object via props that we can use to ensure
     // that our component has visuals that match the active theme in a
@@ -47,6 +47,8 @@ class Card extends StreamlitComponentBase {
         backgroundRepeat: "no-repeat",
         boxShadow: "0px 0px 40px rgba(0, 0, 0, 0.2)",
         margin: `${margin}px`,
+        marginLeft: "auto",
+        marginRight: "auto",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
@@ -84,6 +86,7 @@ class Card extends StreamlitComponentBase {
       fontWeight: "bolder",
       zIndex: "2",
       fontSize: "1em",
+      margin: "0",
       ...styles.text,
     });
 
@@ -97,12 +100,23 @@ class Card extends StreamlitComponentBase {
       zIndex: "1",
     });
 
+    // if the text is a string, convert it to an array
+    if (typeof text === "string") {
+      text = [text];
+    }
+
+    let texts = [];
+    for (let i = 0; i < text.length; i++) {
+      const t = text[i];
+      texts.push(<Text>{t}</Text>);
+    }
+
     return (
       <Parent>
         <Card onClick={this.onClick}>
           <Filter />
           <Title>{title}</Title>
-          <Text>{text}</Text>
+          {texts}
         </Card>
       </Parent>
     );

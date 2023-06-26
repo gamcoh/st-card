@@ -96,3 +96,15 @@ res = card(
     }
 )
 ```
+
+## Multiple descriptions
+
+```py
+from streamlit_card import card
+
+res = card(
+    title="Streamlit Card",
+    text=["This is a test card", "This is a subtext"],
+    image="https://placekitten.com/500/500",
+)
+```

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import os
-from typing import Any, Callable, Dict, Optional
+from typing import Any, Callable, Dict, List, Optional, Union
 
 import streamlit.components.v1 as components
 
-_RELEASE = True
+_RELEASE = False
 COMPONENT_NAME = "streamlit_card"
 
 if _RELEASE:  # use the build instead of development if release is true
@@ -22,11 +22,11 @@ else:
 
 def card(
     title: str,
-    text: str,
+    text: Union[str, List[str]],
     image: Optional[str] = None,
     url: Optional[str] = None,
     on_click: Callable[[Any], Any] = None,
-    styles: Optional[Dict[str, Any]] = None,
+    styles: Optional[Dict[str, Any]] = {"card": {}, "text": {}},
     key: Optional[str] = None,
 ) -> bool:
     """Creates a UI card like component.
