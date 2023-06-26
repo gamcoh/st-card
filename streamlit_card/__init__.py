@@ -4,7 +4,7 @@ from typing import Any, Callable, Dict, List, Optional, Union
 
 import streamlit.components.v1 as components
 
-_RELEASE = False
+_RELEASE = True
 COMPONENT_NAME = "streamlit_card"
 
 if _RELEASE:  # use the build instead of development if release is true
