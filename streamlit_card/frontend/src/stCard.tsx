@@ -98,6 +98,7 @@ class Card extends StreamlitComponentBase {
       top: "0",
       left: "0",
       zIndex: "1",
+      ...styles.filter,
     });
 
     // if the text is a string, convert it to an array
