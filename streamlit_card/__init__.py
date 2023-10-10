@@ -25,7 +25,7 @@ def card(
     text: Union[str, List[str]],
     image: Optional[str] = None,
     url: Optional[str] = None,
-    on_click: Callable[[Any], Any] = None,
+    on_click: Callable[[Any], Any] = lambda: None,
     styles: Optional[Dict[str, Any]] = {"card": {}, "text": {}},
     key: Optional[str] = None,
 ) -> bool:
