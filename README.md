@@ -97,7 +97,7 @@ res = card(
 )
 ```
 
-If you want to set the size of as if you put `use_column_width=True`, do this:
+If you want to set the size of as `use_column_width=True`, do this:
 ```py
 from streamlit_card import card
 
