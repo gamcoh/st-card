@@ -139,7 +139,7 @@ res = card(
 )
 ```
 
-The editable CSS are "card", "title", "text", "filter" and "div".
+The editable CSS are `"card"`, `"title"`, `"text"`, `"filter"` and `"div"`.
 
 ## Multiple descriptions
 
