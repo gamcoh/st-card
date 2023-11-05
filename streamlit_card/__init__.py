@@ -50,6 +50,6 @@ def card(
         styles=styles,
         default=False,
     )
-    if clicked:
+    if clicked and on_click is not None:
         on_click()
     return clicked
