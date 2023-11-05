@@ -60,17 +60,22 @@ class Card extends StreamlitComponentBase {
         ...styles.card,
       },
       `
+      & {
+        transform: scale(0.95);
+      }
       &:hover {
-        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
+        transform: scale(1);
       }
       &:active {
-        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.7);
+        transform: scale(0.95);
       }
       `
     );
 
     const Parent = styled.div({
-      padding: margin
+      padding: margin,
+      width: "100%",
+      ...styles.div,
     });
 
     const Title = styled.h2({
@@ -78,7 +83,7 @@ class Card extends StreamlitComponentBase {
       zIndex: "2",
       fontSize: "2em",
       fontWeight: "bolder",
-      ...styles.text,
+      ...styles.title,
     });
 
     const Text = styled.p({

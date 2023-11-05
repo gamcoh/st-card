@@ -97,6 +97,24 @@ res = card(
 )
 ```
 
+If you want to set the size of as if you put `use_column_width=True`, do this:
+```py
+from streamlit_card import card
+
+res = card(
+    title="Streamlit Card",
+    text="This is a test card",
+    image="https://placekitten.com/500/500",
+    styles={
+        "card": {
+            "width": "100%", # <- make the card use the width of its container, note that it will not resize the height of the card automatically
+            "height": "300px" # <- if you want to set the card height to 300px
+            ...
+        }
+    }
+)
+```
+
 If you want to modify the filter applied to the image, you could do this:
 ```py
 from streamlit_card import card
@@ -114,12 +132,14 @@ res = card(
             ...
         },
         "filter": {
-            "background-color": "rgba(0, 0, 0, 0)"   <- make the image not dimmed anymore
+            "background-color": "rgba(0, 0, 0, 0)"  # <- make the image not dimmed anymore
             ...
         }
     }
 )
 ```
+
+The editable CSS are "card", "title", "text", "filter" and "div".
 
 ## Multiple descriptions
 
