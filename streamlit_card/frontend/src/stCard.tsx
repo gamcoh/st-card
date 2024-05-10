@@ -41,7 +41,7 @@ class Card extends StreamlitComponentBase {
         height: `${height}px`,
         borderRadius: "20px",
         overflow: "hidden",
-        backgroundImage: `url(${image})`,
+        backgroundImage: image ? `url(${image})` : "none",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
