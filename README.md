@@ -1,5 +1,7 @@
 # st-card
 
+[![streamlit-card Downloads Last Month](https://assets.piptrends.com/get-last-month-downloads-badge/streamlit-card.svg 'streamlit-card Downloads Last Month by pip Trends')](https://piptrends.com/package/streamlit-card)
+
 Streamlit Component, for a UI card
 
 authors - [@gamcoh](https://github.com/gamcoh) @Pernod Ricard
